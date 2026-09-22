@@ -4,195 +4,120 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>L1 Turkish Videos</title>
-<meta name="description" content="Lesson videos for L1 Turkish (TURKISH 110), organised by week.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23c8102e'/%3E%3Cpath d='M13 10l10 6-10 6z' fill='white'/%3E%3C/svg%3E">
+<meta name="description" content="Lesson videos for L1 Turkish, organised by week.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2300356b'/%3E%3Cpath d='M13 10l10 6-10 6z' fill='white'/%3E%3C/svg%3E">
 <style>
   :root {
-    --bg: #faf8f4;
-    --surface: #ffffff;
-    --surface-2: #f1ede6;
-    --text: #1c1a17;
-    --muted: #6d675e;
-    --line: #e5dfd5;
-    --accent: #c8102e;
-    --accent-ink: #ffffff;
-    --shadow: 0 1px 2px rgba(28,26,23,.06), 0 8px 24px rgba(28,26,23,.08);
-    --radius: 14px;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #141311;
-      --surface: #1d1b18;
-      --surface-2: #26231f;
-      --text: #f2eee7;
-      --muted: #a39c91;
-      --line: #322e29;
-      --accent: #e53e56;
-      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
-    }
+    --blue: #00356b;
+    --blue-light: #286dc0;
+    --text: #222;
+    --muted: #666;
+    --line: #dcdcdc;
+    --bg: #fff;
+    --serif: "YaleNew", Georgia, "Times New Roman", serif;
+    --sans: "Mallory", Verdana, "Helvetica Neue", Arial, sans-serif;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--sans); font-size: 15.5px; line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  a { color: inherit; }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  a { color: var(--blue); }
+  a:hover { color: var(--blue-light); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
 
-  /* Header */
-  header.hero { padding: 56px 0 28px; }
-  .eyebrow {
-    font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
-    color: var(--accent); margin: 0 0 10px;
-  }
-  h1 {
-    font-family: Fraunces, Georgia, serif; font-weight: 600;
-    font-size: clamp(34px, 5vw, 52px); line-height: 1.05; letter-spacing: -.01em;
-    margin: 0 0 14px;
-  }
-  .lede { color: var(--muted); max-width: 56ch; margin: 0 0 24px; font-size: 17px; }
-  .actions { display: flex; flex-wrap: wrap; gap: 10px; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 10px 16px; border-radius: 999px; border: 1px solid var(--line);
-    background: var(--surface); color: var(--text); font: inherit; font-weight: 500; font-size: 14px;
-    text-decoration: none; cursor: pointer; transition: transform .12s ease, background .12s ease;
-  }
-  .btn:hover { transform: translateY(-1px); background: var(--surface-2); }
-  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
-  .btn.primary:hover { background: var(--accent); filter: brightness(1.08); }
-  .btn svg { width: 16px; height: 16px; flex: none; }
+  /* Top band */
+  .band { background: var(--blue); color: #fff; }
+  .band .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; }
+  .band .name { font-family: var(--serif); font-size: 20px; letter-spacing: .01em; color: #fff; text-decoration: none; }
+  .band .drive { color: #fff; text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; }
+  .band .drive:hover { text-decoration: underline; }
+  .band .drive svg { width: 15px; height: 15px; }
 
-  /* Week nav */
-  nav.weeks {
-    position: sticky; top: 0; z-index: 5;
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--line);
-  }
-  nav.weeks .wrap { display: flex; gap: 6px; overflow-x: auto; padding-top: 10px; padding-bottom: 10px; scrollbar-width: none; }
-  nav.weeks .wrap::-webkit-scrollbar { display: none; }
-  nav.weeks a {
-    flex: none; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 500;
-    color: var(--muted); text-decoration: none; border: 1px solid transparent;
-  }
-  nav.weeks a:hover { color: var(--text); background: var(--surface-2); }
-  nav.weeks a.active { color: var(--text); border-color: var(--line); background: var(--surface); }
+  /* Title */
+  .title { border-bottom: 3px solid var(--blue); padding: 40px 0 14px; }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: 44px; line-height: 1.1; margin: 0; color: var(--blue); }
+  .weeknav { padding: 14px 0 0; font-size: 15px; }
+  .weeknav a { margin-right: 18px; text-decoration: none; white-space: nowrap; display: inline-block; }
+  .weeknav a:hover { text-decoration: underline; }
 
-  /* Sections */
-  main { padding: 12px 0 80px; }
-  section.week { padding: 36px 0 8px; scroll-margin-top: 64px; }
-  .week-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
-  .week-head h2 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 26px; margin: 0; }
-  .week-head .meta { color: var(--muted); font-size: 13px; display: flex; gap: 14px; align-items: center; }
-  .week-head .meta a { text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
-  .week-head .meta a:hover { color: var(--text); }
-  .week-head .meta svg { width: 14px; height: 14px; }
+  /* Weeks */
+  main { padding: 20px 0 60px; }
+  section.week { padding: 34px 0 6px; scroll-margin-top: 16px; }
+  .week-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 18px; }
+  h2 { font-family: var(--serif); font-weight: 400; font-size: 28px; margin: 0; color: var(--blue); }
+  .week-head a { font-size: 14px; text-decoration: none; }
+  .week-head a:hover { text-decoration: underline; }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
-  .card {
-    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-    overflow: hidden; cursor: pointer; text-align: left; padding: 0; font: inherit; color: inherit;
-    transition: transform .15s ease, box-shadow .15s ease;
-  }
-  .card:hover, .card:focus-visible { transform: translateY(-2px); box-shadow: var(--shadow); outline: none; }
-  .card:focus-visible { box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 40%, transparent), var(--shadow); }
-  .thumb { position: relative; aspect-ratio: 16 / 9; background: var(--surface-2); overflow: hidden; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 24px 20px; }
+  .card { background: none; border: 0; padding: 0; text-align: left; font: inherit; color: inherit; cursor: pointer; }
+  .thumb { position: relative; aspect-ratio: 16 / 9; background: #eef1f5; border: 1px solid var(--line); overflow: hidden; }
   .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .thumb .play {
-    position: absolute; inset: 0; display: grid; place-items: center;
-    background: linear-gradient(to top, rgba(0,0,0,.35), rgba(0,0,0,0) 60%);
-    opacity: .95; transition: opacity .15s;
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 44px; height: 44px; border-radius: 50%; background: rgba(0,53,107,.9);
+    display: grid; place-items: center; transition: background .12s;
   }
-  .thumb .play span {
-    width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,.92);
-    display: grid; place-items: center; box-shadow: 0 2px 10px rgba(0,0,0,.25);
-    transition: transform .15s;
-  }
-  .card:hover .play span { transform: scale(1.08); }
-  .thumb .play svg { width: 18px; height: 18px; margin-left: 3px; fill: #1c1a17; }
-  .card-body { padding: 12px 14px 14px; }
-  .card-title { font-weight: 600; font-size: 15px; margin: 0 0 2px; }
-  .card-sub { color: var(--muted); font-size: 12.5px; margin: 0; }
+  .thumb .play svg { width: 16px; height: 16px; margin-left: 3px; fill: #fff; }
+  .card:hover .play, .card:focus-visible .play { background: var(--blue-light); }
+  .card:focus-visible { outline: 2px solid var(--blue-light); outline-offset: 3px; }
+  .card-title { margin: 10px 0 0; font-size: 15.5px; color: var(--text); }
+  .card:hover .card-title { color: var(--blue-light); }
 
-  .slides { margin-top: 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-  .slides .label { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
-  .chip {
-    display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px;
-    border: 1px solid var(--line); background: var(--surface); font-size: 13px; text-decoration: none;
-    transition: background .12s;
-  }
-  .chip:hover { background: var(--surface-2); }
-  .chip svg { width: 13px; height: 13px; color: #f4b400; }
-  .empty { color: var(--muted); font-size: 14px; margin: 0; }
+  .slides { margin-top: 20px; font-size: 14.5px; color: var(--muted); }
+  .slides a { margin-right: 14px; white-space: nowrap; display: inline-block; }
+  .empty { color: var(--muted); margin: 0; font-size: 15px; }
 
-  footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 13px; }
+  footer { border-top: 1px solid var(--line); padding: 20px 0 40px; color: var(--muted); font-size: 13.5px; }
 
-  /* Player modal */
+  /* Player */
   .modal { position: fixed; inset: 0; z-index: 50; display: none; }
   .modal.open { display: block; }
-  .modal .backdrop { position: absolute; inset: 0; background: rgba(10,9,8,.72); backdrop-filter: blur(6px); }
+  .modal .backdrop { position: absolute; inset: 0; background: rgba(0,20,45,.8); }
   .player {
     position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-    width: min(1100px, calc(100vw - 32px)); background: #000; border-radius: 16px; overflow: hidden;
-    box-shadow: 0 24px 80px rgba(0,0,0,.5); display: flex; flex-direction: column;
+    width: min(1100px, calc(100vw - 32px)); background: #000; display: flex; flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0,0,0,.5);
   }
-  .player-bar {
-    display: flex; align-items: center; justify-content: space-between; gap: 12px;
-    padding: 12px 14px 12px 18px; background: #151412; color: #f2eee7;
-  }
-  .player-bar h3 { margin: 0; font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .player-bar .sub { color: #a39c91; font-size: 12px; font-weight: 400; margin-left: 8px; }
+  .player-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 12px 10px 16px; background: var(--blue); color: #fff; }
+  .player-bar h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .player-bar .sub { font-family: var(--sans); font-size: 13px; opacity: .8; margin-left: 10px; }
   .player-bar .tools { display: flex; gap: 6px; flex: none; }
-  .ibtn {
-    display: inline-flex; align-items: center; gap: 6px; padding: 7px 11px; border-radius: 8px;
-    border: 1px solid #332f2a; background: #221f1b; color: #f2eee7; font: inherit; font-size: 13px;
-    cursor: pointer; text-decoration: none;
-  }
-  .ibtn:hover { background: #2c2823; }
+  .ibtn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 11px; border: 1px solid rgba(255,255,255,.45); background: transparent; color: #fff; font: inherit; font-size: 13px; cursor: pointer; text-decoration: none; }
+  .ibtn:hover { background: rgba(255,255,255,.12); color: #fff; }
   .ibtn svg { width: 15px; height: 15px; }
   .frame { position: relative; aspect-ratio: 16 / 9; background: #000; }
   .frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .player:fullscreen { width: 100vw; height: 100vh; border-radius: 0; transform: none; left: 0; top: 0; }
-  .player:fullscreen .frame { flex: 1; aspect-ratio: auto; }
-  .player:-webkit-full-screen { width: 100vw; height: 100vh; border-radius: 0; transform: none; left: 0; top: 0; }
-  .player:-webkit-full-screen .frame { flex: 1; aspect-ratio: auto; }
+  .player:fullscreen, .player:-webkit-full-screen { width: 100vw; height: 100vh; transform: none; left: 0; top: 0; }
+  .player:fullscreen .frame, .player:-webkit-full-screen .frame { flex: 1; aspect-ratio: auto; }
   @media (max-width: 600px) {
+    h1 { font-size: 34px; }
     .player-bar .tools .txt { display: none; }
-    .player-bar { padding: 10px 10px 10px 14px; }
   }
 </style>
 </head>
 <body>
 
-<header class="hero">
+<div class="band">
   <div class="wrap">
-    <p class="eyebrow">TURKISH 110 · Level 1</p>
-    <h1>L1 Turkish Videos</h1>
-    <p class="lede">Lesson videos organised by week. Play them right here, go full screen, or open the original files in Google Drive.</p>
-    <div class="actions">
-      <a class="btn primary" id="drive-root" href="#" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-        Open in Google Drive
-      </a>
-    </div>
+    <span class="name">Turkish at Yale</span>
+    <a class="drive" id="drive-root" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      Open in Google Drive
+    </a>
   </div>
-</header>
+</div>
 
-<nav class="weeks" aria-label="Weeks"><div class="wrap" id="week-nav"></div></nav>
+<header class="wrap">
+  <div class="title"><h1>L1 Turkish Videos</h1></div>
+  <nav class="weeknav" id="week-nav" aria-label="Weeks"></nav>
+</header>
 
 <main><div class="wrap" id="content"></div></main>
 
-<footer><div class="wrap">Videos are streamed from Google Drive. If a video will not play, use the Drive link on the card.</div></footer>
+<footer><div class="wrap">Videos are streamed from Google Drive. If a video will not play here, open it in Drive.</div></footer>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="player-title">
   <div class="backdrop" data-close></div>
@@ -206,7 +131,7 @@
         </button>
         <a class="ibtn" id="drive-btn" href="#" target="_blank" rel="noopener" title="Open in Google Drive">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          <span class="txt">Drive</span>
+          <span class="txt">Open in Drive</span>
         </a>
         <button class="ibtn" type="button" data-close title="Close">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
@@ -232,28 +157,22 @@
   const nav = document.getElementById('week-nav');
   const content = document.getElementById('content');
   const playIcon = '<svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>';
-  const folderIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>';
-  const slideIcon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-7v2h3v1H8v-1h3v-2H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm1 2v10h14V6z"/></svg>';
 
   WEEKS.forEach(w => {
     const id = slug(w.label);
     const a = document.createElement('a');
-    a.href = '#' + id; a.textContent = w.label; a.dataset.target = id;
+    a.href = '#' + id; a.textContent = w.label;
     nav.appendChild(a);
 
     const sec = document.createElement('section');
     sec.className = 'week'; sec.id = id;
-    const n = w.videos.length;
     sec.innerHTML = `
       <div class="week-head">
         <h2>${w.label}</h2>
-        <div class="meta">
-          <span>${n ? n + (n === 1 ? ' video' : ' videos') : 'Slides only'}</span>
-          <a href="${folderUrl(w.folder)}" target="_blank" rel="noopener">${folderIcon} Folder</a>
-        </div>
+        <a href="${folderUrl(w.folder)}" target="_blank" rel="noopener">Drive folder</a>
       </div>`;
 
-    if (n) {
+    if (w.videos.length) {
       const grid = document.createElement('div'); grid.className = 'grid';
       w.videos.forEach(v => {
         const card = document.createElement('button');
@@ -261,12 +180,9 @@
         card.innerHTML = `
           <div class="thumb">
             <img src="${thumbUrl(v.id)}" alt="" loading="lazy" onerror="this.remove()">
-            <div class="play"><span>${playIcon}</span></div>
+            <span class="play">${playIcon}</span>
           </div>
-          <div class="card-body">
-            <p class="card-title">${v.title}</p>
-            <p class="card-sub">${w.label}</p>
-          </div>`;
+          <p class="card-title">${v.title}</p>`;
         card.addEventListener('click', () => openPlayer(v, w));
         grid.appendChild(card);
       });
@@ -278,22 +194,13 @@
     }
 
     if (w.slides.length) {
-      const row = document.createElement('div'); row.className = 'slides';
-      row.innerHTML = '<span class="label">Slides</span>' + w.slides.map(s =>
-        `<a class="chip" href="${slidesUrl(s.id)}" target="_blank" rel="noopener">${slideIcon}${s.title}</a>`).join('');
+      const row = document.createElement('p'); row.className = 'slides';
+      row.innerHTML = 'Slides: ' + w.slides.map(s =>
+        `<a href="${slidesUrl(s.id)}" target="_blank" rel="noopener">${s.title}</a>`).join('');
       sec.appendChild(row);
     }
     content.appendChild(sec);
   });
-
-  // Highlight the week in view
-  const links = [...nav.querySelectorAll('a')];
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) links.forEach(l => l.classList.toggle('active', l.dataset.target === e.target.id));
-    });
-  }, { rootMargin: '-20% 0px -70% 0px' });
-  document.querySelectorAll('section.week').forEach(s => obs.observe(s));
 
   // Player
   const modal = document.getElementById('modal');
