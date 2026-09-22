@@ -6,11 +6,12 @@ A single-page site that lists the TURKISH 110 (Level 1) lesson videos by week, s
 
 ## Updating the content
 
-All content lives in [`data.js`](data.js). Each week has:
+All content lives in [`data.js`](data.js). Each week has (weeks with no videos are hidden):
 
 - `label` – the heading shown on the page
 - `folder` – the Drive folder id for that week
 - `videos` – a list of `{ id, title }` where `id` is the Drive file id (from `https://drive.google.com/file/d/<id>/view`)
-- `slides` – a list of `{ id, title }` where `id` is the Google Slides id (from `https://docs.google.com/presentation/d/<id>/edit`)
 
 Files must be shared as "Anyone with the link" for playback to work. Commit and push; GitHub Pages redeploys automatically.
+
+Live site: https://turkish-at-yale.github.io/l1-turkish-videos/

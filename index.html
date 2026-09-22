@@ -67,8 +67,6 @@
   .card-title { margin: 12px 0 0; font-size: 15.5px; color: var(--text); transition: color .2s; }
   .card:hover .card-title { color: var(--blue-light); }
 
-  .slides { margin-top: 22px; font-size: 14.5px; color: var(--muted); display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; }
-  .slides a { white-space: nowrap; }
 
   /* Links whose underline grows in from the left on hover */
   .u { position: relative; text-decoration: none; padding-bottom: 2px; }
@@ -161,7 +159,6 @@
   const fileUrl = id => `https://drive.google.com/file/d/${id}/view`;
   const previewUrl = id => `https://drive.google.com/file/d/${id}/preview`;
   const thumbUrl = id => `https://drive.google.com/thumbnail?id=${id}&sz=w640`;
-  const slidesUrl = id => `https://docs.google.com/presentation/d/${id}/edit`;
   const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
   document.getElementById('drive-root').href = folderUrl(DRIVE_ROOT);
@@ -170,7 +167,7 @@
   const content = document.getElementById('content');
   const playIcon = '<svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>';
 
-  WEEKS.forEach(w => {
+  WEEKS.filter(w => w.videos.length).forEach(w => {
     const id = slug(w.label);
     const a = document.createElement('a');
     a.href = '#' + id; a.textContent = w.label; a.className = 'u';
@@ -205,12 +202,6 @@
       sec.appendChild(p);
     }
 
-    if (w.slides.length) {
-      const row = document.createElement('p'); row.className = 'slides';
-      row.innerHTML = '<span>Slides</span>' + w.slides.map(s =>
-        `<a class="u" href="${slidesUrl(s.id)}" target="_blank" rel="noopener">${s.title}</a>`).join('');
-      sec.appendChild(row);
-    }
     content.appendChild(sec);
   });
 
@@ -241,7 +232,23 @@
     document.body.style.overflow = '';
     if (lastFocus) lastFocus.focus();
   }
+  const fsEl = () => document.fullscreenElement || document.webkitFullscreenElement;
+  const fsLabel = fsBtn.querySelector('.txt');
+  const enterIcon = fsBtn.querySelector('svg').outerHTML;
+  const exitIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v3a2 2 0 0 1-2 2H3M16 3v3a2 2 0 0 0 2 2h3M8 21v-3a2 2 0 0 0-2-2H3M16 21v-3a2 2 0 0 1 2-2h3"/></svg>';
+  function syncFs() {
+    const on = !!fsEl();
+    fsBtn.querySelector('svg').outerHTML = on ? exitIcon : enterIcon;
+    fsLabel.textContent = on ? 'Exit full screen' : 'Full screen';
+    fsBtn.title = on ? 'Exit full screen' : 'Full screen';
+  }
+  document.addEventListener('fullscreenchange', syncFs);
+  document.addEventListener('webkitfullscreenchange', syncFs);
   fsBtn.addEventListener('click', () => {
+    if (fsEl()) {
+      (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+      return;
+    }
     const req = player.requestFullscreen || player.webkitRequestFullscreen;
     if (req) req.call(player);
     else window.open(frame.src, '_blank'); // iOS Safari fallback
