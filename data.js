@@ -94,12 +94,48 @@ const WEEKS = [
   {
     "label": "Week 5",
     "folder": "1MoE0RUOxbSEZD-O9ilax8QeMOQwtbQFs",
-    "videos": []
+    "videos": [
+      {
+        "id": "1zgWdVYNqesDh6zqrODQjdbyBP18EZq8Z",
+        "title": "Present Tense"
+      },
+      {
+        "id": "1iq8awBvTNTNTUtygFlMZ69Ae-cReCQ2D",
+        "title": "Present Tense Interrogative Verbal Questions"
+      },
+      {
+        "id": "1vDzsMrldr9xusBOuqkvdO_2w8qo908y1",
+        "title": "Possessive Suffixes"
+      }
+    ]
   },
   {
     "label": "Week 6",
     "folder": "1t7jJGfXWkFRLNdirZnYGB9PtFxodNkEO",
-    "videos": []
+    "videos": [
+      {
+        "id": "1FFDE765XrVvzgksTcbP4XvpinUKx3yJF",
+        "title": "Genitive–Possessive Construction"
+      },
+      {
+        "id": "1zvzf039tgQNz26lA4k_Mi2TXsW8t5Ynw",
+        "title": "Negation in the Present Tense"
+      }
+    ]
+  },
+  {
+    "label": "Week 7",
+    "folder": "1dPg8pW_CN95QO9-sQmaO7_Hh7_TCBNuI",
+    "videos": [
+      {
+        "id": "1KHhgJHvjol7ArS1YtU6rDuyBH88OfU7p",
+        "title": "-CI suffix"
+      },
+      {
+        "id": "1tk2j65n6WFOv7uThSus3IIOrdTto6sg6",
+        "title": "Vowel Omission"
+      }
+    ]
   },
   {
     "label": "Week 15",
