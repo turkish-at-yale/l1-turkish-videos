@@ -138,6 +138,56 @@ const WEEKS = [
     ]
   },
   {
+    "label": "Week 9",
+    "folder": "1hJ7pe0Jlyu8ArAjtIgLMwdpH72j3CNSh",
+    "videos": [
+      {
+        "id": "1okR3wi1inYNfCjDmTvhFFU8HaOMFIvei",
+        "title": "-lI suffix"
+      },
+      {
+        "id": "16JB4Lw0P56mA6CUlU_kmqoGvHVNAWfhT",
+        "title": "The Instrumental Marker -(y)lA"
+      }
+    ]
+  },
+  {
+    "label": "Week 10",
+    "folder": "16ea66EyrLUCtuHZno3ZYRU1HUcVDWM_z",
+    "videos": [
+      {
+        "id": "1-9VlFWMcp71BdPw9UUF4UOsQ06M3w-Cp",
+        "title": "Existential Sentences"
+      },
+      {
+        "id": "1NI33gBmyBiPtiaxwcHTJhK2t3YNVjOc2",
+        "title": "Quantifiers with Nouns I"
+      }
+    ]
+  },
+  {
+    "label": "Week 11",
+    "folder": "1--KThijjtF8H8BrRmwrNHWZkXpByxoIF",
+    "videos": [
+      {
+        "id": "1L2o5KRCG8F7WOURebKgsCcDCJu0ugZSd",
+        "title": "Accusative Case"
+      },
+      {
+        "id": "1ShkaXz_NvTOAzVvCXlJGmAUqIetdWYlp",
+        "title": "Dative Case"
+      },
+      {
+        "id": "1Q-uK949ahHs4rDirz-Wt4Oo7_tTccciW",
+        "title": "Expressing Necessity with Lazım"
+      },
+      {
+        "id": "1-MJ4DuWHyGlhEyHugPXCZycL_8GHcvzK",
+        "title": "Transitive and Intransitive Verbs"
+      }
+    ]
+  },
+  {
     "label": "Week 15",
     "folder": "1ogaJjZvsgjSP-qwDXxBVpxBABP9fZ3zl",
     "videos": []
